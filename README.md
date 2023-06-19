@@ -1,4 +1,4 @@
-# Time tracker app
+# Todo app
 
 ## Description:
 

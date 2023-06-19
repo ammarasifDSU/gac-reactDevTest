@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>Time tracker app</h1>
+        <h1>Todo app</h1>
       </div>
     </>
   );

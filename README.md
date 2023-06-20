@@ -72,7 +72,7 @@ TASK object
 | Method | Url       | Params                        |
 | ------ | :-------- | :---------------------------- |
 | POST   | /task     | { name, completed, category } |
-| GET    | /task     |                               |
+| GET    | /task     | ?{fieldName}={value}          |
 | PUT    | /task/:id | { name, completed, category}  |
 
 _/category_

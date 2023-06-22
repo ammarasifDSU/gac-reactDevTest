@@ -74,6 +74,8 @@ TASK object
 | POST   | /task     | { name, completed, category } |
 | GET    | /task     | ?{fieldName}={value}          |
 | PUT    | /task/:id | { name, completed, category}  |
+| DELETE | /task/:id |                               |
+
 
 _/category_
 

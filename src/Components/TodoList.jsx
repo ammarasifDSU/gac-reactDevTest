@@ -19,20 +19,24 @@ const TodoList = () => {
       dispatch(deleteTodoReducer(id))
     }
 
-    const changeStatus = (id,status)=>
+    const changeStatus = (id,completed)=>
     {
-      dispatch(markCompletedTodo(id,status))
+      let obj = {id,completed}
+      dispatch(markCompletedTodo(obj))
     }
   return (
-    <div>
+    <div className="todo-list">
+       <h3>Todo List</h3>
         <ul className='todos'>
       {todos?.map((val,key)=>(
-        <li className='todo-items' key={key}>{val.name}
-        <span>
-        <label className='delete-btn' onClick={e=>deleteItem(e,val.id)}> X </label>
-        <input className='todo-checkbox' onClick={e=>changeStatus(val.id,val.status)} type='checkbox' checked={val.status}/>
-        
-        </span>
+        <li className='todo-items' key={key}>
+          <span className="todo-name">{val.name}</span>
+          <input className='todo-checkbox' onClick={e=>changeStatus(val.id,!val.completed)} type='checkbox' checked={val.completed}/>
+        <button className="remove-button" onClick={e=>deleteItem(e,val.id)}>
+              &#10005;
+            </button>
+       
+    
         </li>
       ))}
       </ul>

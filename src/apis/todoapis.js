@@ -22,8 +22,8 @@ export const deleteTodoApi = (id)=>{
     })
 }
 
-export const changeTodoStatusApi= (id,status)=>{
-    axios.put(`${baseurl}/task/${id}`,{status}).then((res)=>{
+export const changeTodoStatusApi= (id,completed)=>{
+    axios.put(`${baseurl}/task/${id}`,{completed}).then((res)=>{
 
     })
 }

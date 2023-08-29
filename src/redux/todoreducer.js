@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { AddNewTodoApi, deleteTodoApi, fetchAlltodosApi } from "../apis/todoapis";
+import { AddNewTodoApi, changeTodoStatusApi, deleteTodoApi, fetchAlltodosApi } from "../apis/todoapis";
 
 
 const todoReducer = createSlice({
@@ -16,14 +16,12 @@ const todoReducer = createSlice({
             state.todos = action.payload
         },
         markCompletedTodo:(state,action)=>{
-            // state.todos[action.payload.id].status = action.payload.status
-            changeTodoStatusApi(action.payload.id,action.payload.status)
+        
+            const index = state.todos.findIndex(item => item.id == action.payload.id);
+            state.todos[index].completed = action.payload.completed
+            changeTodoStatusApi(action.payload.id,action.payload.completed)
         },
         fetchAllTodosReducer:(state,action)=>{
-            //  fetchAlltodosApi().then(res=>{
-            //     state.todos = [...res.data]
-            //  })
-             //state.todos= data
         },
         deleteTodoReducer:(state,action)=>{
             state.todos = state.todos.filter((todo)=>todo.id != action.payload)

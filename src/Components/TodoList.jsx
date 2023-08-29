@@ -3,12 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import "../styles/todos.css";
 import {
   deleteTodoReducer,
-  fetchAllTodosReducer,
   markCompletedTodo,
-  setAllTodos,
 } from "../redux/todoreducer";
-import { fetchAlltodosApi } from "../apis/todoapis";
 import { fetchCategoriesApi } from "../apis/categoryapis";
+import { fetchAllTodos } from "../apis/todoapis";
 
 const TodoList = () => {
   const { todos } = useSelector((state) => state.todo);
@@ -18,10 +16,8 @@ const TodoList = () => {
   const [selectedCategory, setSelectedCategory] = useState({});
 
   useEffect(() => {
-    fetchAlltodosApi().then((res) => {
-      dispatch(setAllTodos(res.data));
-      setDisplayTodos(res.data);
-    });
+
+    dispatch(fetchAllTodos());
 
     fetchCategoriesApi().then((res) => {
       if (res.data && res.data.length > 0) {
@@ -68,7 +64,7 @@ const TodoList = () => {
     <div>
       <h3>Todo List</h3>
       <div className="frame">
-        {todos.length == 0 ? (
+        {todos?.length == 0 ? (
           <h2>No Todo added yet!</h2>
         ) : (
           <>

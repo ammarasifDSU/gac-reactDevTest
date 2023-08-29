@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodoReducer } from "../redux/todoreducer";
 import "../styles/todos.css";
 import { fetchCategoriesApi } from "../apis/categoryapis";
+import { addNewTodoAndFetchAll } from "../apis/todoapis";
 
 const AddTodo = () => {
   const [newTodoValue, setNewTodoValue] = useState("");
@@ -35,7 +35,7 @@ const AddTodo = () => {
       setNewTodoValue("");
       let firstId = category[0].id;
       setSelectedCategory(firstId);
-      dispatch(addTodoReducer(newTodo));
+      dispatch(addNewTodoAndFetchAll(newTodo));
     }
   };
 

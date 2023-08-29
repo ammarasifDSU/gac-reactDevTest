@@ -25,8 +25,9 @@ const TodoList = () => {
       dispatch(markCompletedTodo(obj))
     }
   return (
-    <div className="todo-list">
+    <div >
        <h3>Todo List</h3>
+       <div className="frame">
         <ul className='todos'>
       {todos?.map((val,key)=>(
         <li className='todo-items' key={key}>
@@ -40,6 +41,7 @@ const TodoList = () => {
         </li>
       ))}
       </ul>
+      </div>
     </div>
   )
 }

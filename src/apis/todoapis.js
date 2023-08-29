@@ -1,29 +1,21 @@
-import axios from "axios"
+import axios from "axios";
 
-const baseurl = "https://64905ded1e6aa71680cb200e.mockapi.io/api/"
+const { VITE_BASE_URL } = import.meta.env;
 
-export const AddNewTodoApi = (data) =>{
-    axios.post(`${baseurl}/task`,data)
-    .then((res)=>{
-        if(res.status == 201)
-        return true
-    else return false
-    })
-    
-}
+const baseurl = VITE_BASE_URL;
 
-export const fetchAlltodosApi =  () =>{
-    return axios.get(`${baseurl}/task`)
-}
+export const AddNewTodoApi = (data) => {
+  return axios.post(`${baseurl}/task`, data);
+};
 
-export const deleteTodoApi = (id)=>{
-    axios.delete(`${baseurl}/task/${id}`).then((res)=>{
+export const fetchAlltodosApi = () => {
+  return axios.get(`${baseurl}/task`);
+};
 
-    })
-}
+export const deleteTodoApi = (id) => {
+  return axios.delete(`${baseurl}/task/${id}`);
+};
 
-export const changeTodoStatusApi= (id,completed)=>{
-    axios.put(`${baseurl}/task/${id}`,{completed}).then((res)=>{
-
-    })
-}
+export const changeTodoStatusApi = (id, completed) => {
+  return axios.put(`${baseurl}/task/${id}`, { completed });
+};

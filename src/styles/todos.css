@@ -1,58 +1,61 @@
+.frame {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+}
 
-
-  .frame {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-  }
-
-ul{
-    
-    text-align: left;
-    padding: 0;
+ul {
+  text-align: left;
+  padding: 0;
 }
 
 li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
+fieldset {
+  border: none;
+  padding: 10px;
+}
 
-
-fieldset{
-    border: none;
-    padding: 10px;
+.select-category {
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-left: 10px;
 }
 
 
 .todo-name {
-    flex-grow: 1;
-    margin-right: 10px;
-    font-weight: bold;
-  }
+  flex-grow: 1;
+  margin-right: 10px;
+  font-weight: bold;
+}
 
-  .remove-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    margin-left: 5px;
-    color: red;
-  }
+.remove-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: 5px;
+  color: red;
+}
 
-  .input-todo{
-    padding: 5px;
-    border: 1px solid #000;
-    border-radius:5px;
-  }
-
-.btn-addtodo{
+.input-todo {
   padding: 5px;
   border: 1px solid #000;
-    border-radius:5px;
-    margin-left: 10px;
+  border-radius: 5px;
 }
+
+.btn-addtodo {
+  padding: 8px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  display: block;
+  margin: auto;
+}
+
